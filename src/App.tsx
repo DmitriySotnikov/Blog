@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {FC, useEffect} from 'react'
+import {Route, Routes} from 'react-router-dom'
+import  './App.css'
+import {Home} from './page/Home/Home'
+import {Sidebar} from './components/blocks/Sidebar/Sidebar'
+import {Previews} from './page/Previews/Previews'
+import {PostArticle} from './page/PostArticle/PostArticle'
+import {OneArticle} from "./page/OneArticle/OneArticle";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export const App: FC = () => {
+    return (
+        <div className='layout'>
+            <Sidebar/>
+            <Routes>
+                <Route path='/article/:id' element={<OneArticle />}/>
+                <Route path='/preview' element={<Previews />} />
+                <Route path='/postArticle' element={<PostArticle />} />
+                <Route path='/' element={<Home />} />
+            </Routes>
+        </div>
+    )
 }
-
-export default App;

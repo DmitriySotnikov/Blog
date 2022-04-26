@@ -1,0 +1,15 @@
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation {
+    padding: 5vh 0 0 0 ;
+}
+
+.confirmation button {
+    margin: 5vh 0 0 0 ;
+    width: 20vw;
+}

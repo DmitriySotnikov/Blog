@@ -1,0 +1,28 @@
+.content {
+    color: #3d4449;
+    font-family: 'Montserrat', serif;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.title {
+    width: 76vw;
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+    padding: 3vh 0 2vh 0;
+}
+
+.title span{
+    border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.header span{
+    padding:  2vh 5vw 0 0;
+}
