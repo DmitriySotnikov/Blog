@@ -13,12 +13,10 @@ import { rules } from '../../util/rules';
 export const PostArticle: FC = () => {
 
     const initialArticleState = {
-        author: '',
-        preview: '',
-        title: '',
-        contentArticle: '',
+        ArticleAuthorId: 0,
+        date: '',
         id: 0,
-        date: ''
+        contentArticle: ''
     }
 
     const [Article, setPostArticle] = useState<IArticle>(initialArticleState)
@@ -47,43 +45,45 @@ export const PostArticle: FC = () => {
         }
     };
 
-    const authorHandler = (e: ChangeEvent<HTMLInputElement>
-    ) => setPostArticle({...Article, author: e.target.value})
+    //const authorHandler = (e: ChangeEvent<HTMLInputElement>
+    //) => setPostArticle({...Article, author: e.target.value})
 
-    const previewHandler = (e: ChangeEvent<HTMLInputElement>
-    ) => setPostArticle({...Article, preview: e.target.value})
+    //const previewHandler = (e: ChangeEvent<HTMLInputElement>
+    //) => setPostArticle({...Article, preview: e.target.value})
 
-    const titleHandler = (e: ChangeEvent<HTMLInputElement>
-    ) => setPostArticle({...Article, title: e.target.value})
+    //const titleHandler = (e: ChangeEvent<HTMLInputElement>
+    //) => setPostArticle({...Article, title: e.target.value})
 
+    const testHandler = (e: ChangeEvent<HTMLInputElement>
+    ) => console.log('нажать')
 
     return ( statusArticle ? <Confirmation /> :
-        <div className='content'>
-            <div className='titleArticlesForm'>
-                <span>Здесь вы можете написать свою статью</span>
-                <br/>
-                <br/>
-                {moment().format('LL')}
-            </div>
-            <Form form={form} layout="horizontal" onFinish={onFinish}>
-                <ArticleInput
-                    formName= {"author"}
-                    formLabel= {"Ваще имя"}
-                    formValue ={Article.author}
-                    onchangeHandler={authorHandler}
-                />
-                <ArticleInput
-                    formName= {"preview"}
-                    formLabel= {"Тема ваще статьи"}
-                    formValue ={Article.preview}
-                    onchangeHandler={previewHandler}
-                />
-                <ArticleInput
-                    formName= {"title"}
-                    formLabel= {"Заголовок вашей статьи"}
-                    formValue ={Article.title}
-                    onchangeHandler={titleHandler}
-                />
+            <div className='content'>
+                <div className='titleArticlesForm'>
+                    <span>Здесь вы можете написать свою статью</span>
+                    <br/>
+                    <br/>
+                    {moment().format('LL')}
+                </div>
+                <Form form={form} layout="horizontal" onFinish={onFinish}>
+                    <ArticleInput
+                        formName= {"author"}
+                        formLabel= {"Ваще имя"}
+                        formValue ={'Article'}
+                        onchangeHandler={testHandler}
+                    />
+                    <ArticleInput
+                        formName= {"preview"}
+                        formLabel= {"Тема ваще статьи"}
+                        formValue ={'Article'}
+                        onchangeHandler={testHandler}
+                    />
+                    <ArticleInput
+                        formName= {"title"}
+                        formLabel= {"Заголовок вашей статьи"}
+                        formValue ={'Article'}
+                        onchangeHandler={testHandler}
+                    />
                     <Form.Item
                         name="contentArticle"
                         label="Текст вашей статьи"
@@ -111,7 +111,7 @@ export const PostArticle: FC = () => {
                             Reset
                         </Button>
                     </Form.Item>
-            </Form>
-        </div>
-);
+                </Form>
+            </div>
+    );
 };

@@ -14,17 +14,13 @@ export const Sidebar: FC = () => {
         rating: 5
     }]
 
-    const {fetchItems, fetchPreview} = useAppDispatchBind()
+    const {fetchItems, fetchPreviews} = useAppDispatchBind()
+    const {items} = useAppSelector(state => state.sidebarItems)
 
     useEffect(() => {
         fetchItems()
         //fetchPreview(7)
     }, [])
-
-    const {items} = useAppSelector(state => state.sidebarItems)
-
-    //const {previews, loading} = useAppSelector(state => state.articles)
-    //if (loading) {return <h1>Загрузка...</h1>}
 
     return (
     <div>

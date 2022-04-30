@@ -5,7 +5,8 @@ import {Home} from './page/Home/Home'
 import {Sidebar} from './components/blocks/Sidebar/Sidebar'
 import {Previews} from './page/Previews/Previews'
 import {PostArticle} from './page/PostArticle/PostArticle'
-import {OneArticle} from "./page/OneArticle/OneArticle";
+import {Article} from "./page/Article/Article";
+import {Spine} from "./components/common/simple/Spiner";
 
 
 export const App: FC = () => {
@@ -13,10 +14,11 @@ export const App: FC = () => {
         <div className='layout'>
             <Sidebar/>
             <Routes>
-                <Route path='/article/:id' element={<OneArticle />}/>
+                <Route path='/article/:id' element={<Article />}/>
                 <Route path='/preview' element={<Previews />} />
                 <Route path='/postArticle' element={<PostArticle />} />
                 <Route path='/' element={<Home />} />
+                <Route path='/spine' element={<Spine/>}/>
             </Routes>
         </div>
     )

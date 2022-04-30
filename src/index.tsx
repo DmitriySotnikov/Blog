@@ -11,13 +11,11 @@ const root = ReactDomClient.createRoot(document.getElementById('root') as HTMLEl
 
 root.render(
     <Provider store={store}>
-        <React.StrictMode>
-            <BrowserRouter>
-                <Routes  >
-                    <Route path='*' element={<App/>} />
-                </Routes >
-            </BrowserRouter>
-        </React.StrictMode>
+        <BrowserRouter>
+            <Routes  >
+                <Route path='*' element={<App/>} />
+            </Routes >
+        </BrowserRouter>
     </Provider>
 )
 
