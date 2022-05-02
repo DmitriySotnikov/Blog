@@ -7,6 +7,7 @@ import {Previews} from './page/Previews/Previews'
 import {PostArticle} from './page/PostArticle/PostArticle'
 import {Article} from "./page/Article/Article";
 import {Spine} from "./components/common/simple/Spiner";
+import {Error} from "./components/common/simple/Error";
 
 
 export const App: FC = () => {
@@ -19,6 +20,7 @@ export const App: FC = () => {
                 <Route path='/postArticle' element={<PostArticle />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/spine' element={<Spine/>}/>
+                <Route path='/error' element={<Error/>} />
             </Routes>
         </div>
     )

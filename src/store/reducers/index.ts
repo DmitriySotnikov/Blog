@@ -2,9 +2,11 @@
 
 import {articleReducer} from './articles'
 import {sidebarItemsReducer} from "./sidebarItems";
+import {errorReducer} from "./errors";
 
 export const reducers = {
     articles: articleReducer,
-    sidebarItems: sidebarItemsReducer
+    sidebarItems: sidebarItemsReducer,
+    errors: errorReducer
 }
 

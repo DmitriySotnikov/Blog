@@ -1,12 +1,30 @@
 import {Dispatch} from "redux"
-import {ArticleActionsCreator, SetArticle, SetAuthor, SetIsLoading, SetStatusArticle} from "../../types/articleTypes"
-import {ArticleActionTypes} from '../../action'
+import {
+    ArticleActionsCreator,
+    SetArticle,
+    SetAuthor,
+    SetIsError,
+    SetIsLoading,
+    SetPage,
+    SetStatusArticle
+} from "../../types/articleTypes"
+import {ArticleActionTypes, ErrorType} from '../../action'
 import {IArticle} from "../../../models/IArticle"
 import {ArticleService} from "../../../service/ArticleService"
 import {IAuthor} from "../../../models/IAuthor";
 
+export const isError = (payload: boolean): SetIsError => ({
+    type: ArticleActionTypes.IS_ERROR,
+    payload
+})
+
 export const confirmation = (payload: boolean): SetStatusArticle => ({
     type: ArticleActionTypes.SET_STATUS,
+    payload
+})
+
+export const setCurrentPage = (payload: number): SetPage => ({
+    type: ArticleActionTypes.SET_PAGE,
     payload
 })
 
@@ -77,15 +95,18 @@ export const fetchPreviews = (limit: number, currentPage: number) => {
             type: ArticleActionTypes.IS_LOADING, payload
         })
         loading(true)
+        let response
         try {
-            const response = await ArticleService.preview(limit,  currentPage)
-            dispatch({type: ArticleActionTypes.SET_PREVIEW, payload: response.data})
-            dispatch({type: ArticleActionTypes.SET_TOTAL_PAGE, payload: response.data.count})
-            dispatch({type: ArticleActionTypes.SET_PAGE, payload: currentPage})
+            response = await ArticleService.preview(limit,  currentPage)
         } catch (e) {
+            dispatch({type: ArticleActionTypes.IS_ERROR, payload: true})
             console.log(e)
-        } finally {
-            loading(false)
+            return
         }
+        dispatch({type: ArticleActionTypes.SET_PREVIEW, payload: response.data})
+        dispatch({type: ArticleActionTypes.SET_TOTAL_PAGE, payload: response.data.count})
+        dispatch({type: ArticleActionTypes.SET_PAGE, payload: currentPage})
+        loading(false)
+
     }
 }

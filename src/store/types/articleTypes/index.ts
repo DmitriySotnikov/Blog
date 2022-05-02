@@ -11,7 +11,7 @@ export interface ArticleState {
     article: IArticle
     author: IAuthor
     loading: boolean
-    error: null | string
+    isError: boolean,
     statusArticle: boolean
     setResponseLoading: boolean
     currentPage: number
@@ -20,6 +20,11 @@ export interface ArticleState {
 }
 
 // ACTION CREATORS INTERFACE
+
+export interface SetIsError {
+    type: ArticleActionTypes.IS_ERROR
+    payload: boolean
+}
 
 export interface SetTotalPage {
     type: ArticleActionTypes.SET_TOTAL_PAGE
@@ -61,19 +66,14 @@ export interface SetIsLoading {
     payload: boolean
 }
 
-export interface SetError {
-    type: ArticleActionTypes.SET_ERROR
-    payload: null | string
-}
-
 // Тип для обобщения все интерфейсов actions creators
 export type ArticleActionsCreator =
     SetIsLoading |
     SetArticle |
-    SetError |
     SetStatusArticle |
     SetResponseLoading |
     SetPreviews |
     SetAuthor |
     SetPage |
-    SetTotalPage
+    SetTotalPage |
+    SetIsError

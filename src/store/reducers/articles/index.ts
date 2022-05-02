@@ -9,8 +9,8 @@ const initialState: ArticleState = {
     previews: {} as IPreview ,
     article: {} as IArticle,
     author: {} as IAuthor,
-    error: '',
     loading: true,
+    isError: false,
     statusArticle: false,
     setResponseLoading: false,
     currentPage: 1,
@@ -23,10 +23,10 @@ export const articleReducer = (
     switch (action.type) {
         case ArticleActionTypes.IS_LOADING:
             return {...state, loading: action.payload}
+        case ArticleActionTypes.IS_ERROR:
+            return {...state, isError: action.payload, loading: false}
         case ArticleActionTypes.SET_ARTICLE:
             return {...state, article: action.payload}
-        case ArticleActionTypes.SET_ERROR:
-            return {...state, error: action.payload  , loading: false}
         case ArticleActionTypes.SET_STATUS:
             return {...state, statusArticle: action.payload}
         case ArticleActionTypes.SET_RESPONSE_LOADING:
