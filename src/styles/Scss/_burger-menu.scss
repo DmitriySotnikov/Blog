@@ -1,0 +1,30 @@
+.burger-menu {
+  border: #bfbfbf solid 1px;
+  position: fixed;
+  width: 300px;
+  text-transform: uppercase;
+  top: 80px;
+  left: 0;
+  height: 100%;
+  transition: .3s;
+  background: #0050b3;
+  transform: translateX(-150%);
+  &__active {
+    transform: translateX(0);
+  }
+  &__list {
+    list-style-type: none;
+    text-decoration: none;
+    padding-inline-start: 0;
+  }
+  &__list-item {
+    margin: 35px 0 0 0;
+    padding-bottom: 25px;
+    border-bottom: #bfbfbf solid 1px;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--white);
+    padding-left: 40px;
+  }
+}

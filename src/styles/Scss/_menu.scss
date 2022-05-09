@@ -1,0 +1,39 @@
+.menu {
+  margin-right: 20px;
+  list-style-type: none;
+
+  &__list-item {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var(--white);
+
+    &--active {
+      text-decoration: none;
+      color: var(--white);
+      /*color: #ea4c88;*/
+      border-bottom: solid var(--menu-link-active) 2px;
+    }
+
+    &:hover {
+      color: var(--menu-link-color)
+    }
+  }
+
+  &__list-item {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+
+  @media (max-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
+}
+

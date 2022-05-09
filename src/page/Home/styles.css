@@ -17,16 +17,6 @@
     border-bottom: solid 2px rgba(210, 215, 217, 0.75);
 }
 
-.header {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.header span{
-    padding:  2vh 5vw 0 0;
-}
-
 .carousel {
     width: inherit;
     display: flex;

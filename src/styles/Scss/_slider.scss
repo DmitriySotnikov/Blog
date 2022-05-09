@@ -1,0 +1,85 @@
+.slider {
+  z-index: 30;
+  height: var(--heights-slider);
+  width: var(--widths-slider);
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  &__dot {
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 3px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: inline-block;
+    &:hover
+    {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &--active {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  &__dots {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    top: 85%;
+    justify-content: center;
+    z-index: 20;
+  }
+  &__arrow {
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    margin-top: -3rem;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+    &:hover {
+      color: var(--white);
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: all 0.5s ease-in;
+    }
+    &--next {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+  &__slides {
+    height: var(--heights-slider);
+    width: var(--widths-slider);
+    position: relative;
+    &--active {
+      display: inline-block;
+    }
+    &--inactive {
+      display: none;
+    }
+  }
+  &__slide-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
+  &__slide-text{
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    font-size: 50px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    z-index: 1;
+    &--description {
+      top: 65%;
+      font-size: 2rem;
+    }
+  }
+}

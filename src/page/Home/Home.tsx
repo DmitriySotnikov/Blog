@@ -10,34 +10,13 @@ import './styles.css'
 export const Home: FC = () => {
 
     return (
-        <div className='content'>
-            <div className='header'>
-                <span>О нас</span>
-                <span>Контакты</span>
+        <div className='container'>
+            <div>
+                <div className='title'>
+                <span></span>
+                </div>
             </div>
-            <div className='title'>
-                <span>Блог посвещен автосигнализациям и пжд</span>
-            </div>
-            <div className='carousel'>
-                <Carousel autoplay>
-                    <div>
-                        <img className='contentStyle' src={img} alt={'image'}/>
-                    </div>
-                    <div>
-                        <img className='contentStyle' src={img_1}/>
-                    </div>
-                    <div>
-                        <img className='contentStyle' src={img_2}/>
-                    </div>
-                    <div>
-                        <img className='contentStyle' src={img_3}/>
-                    </div>
-                    <div>
-                        <img className='contentStyle' src={img_4}/>
-                    </div>
-                </Carousel>
 
-            </div>
         </div>
     );
 };
