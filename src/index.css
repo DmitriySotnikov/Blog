@@ -28,7 +28,3 @@ body {
   font-family: 'Montserrat';
   src: local('Montserrat'), url(assets/font/Montserrat/Montserrat-BoldItalic.ttf) format('truetype');
 }
-
-.container {
-  width: 1026px;
-}

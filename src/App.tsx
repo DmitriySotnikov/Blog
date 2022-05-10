@@ -1,8 +1,6 @@
-import React, {FC, useEffect} from 'react'
+import React, {FC} from 'react'
 import {Route, Routes} from 'react-router-dom'
-//import  './App.css'
 import {Home} from './page/Home/Home'
-import {Sidebar} from './components/blocks/Sidebar/Sidebar'
 import {Previews} from './page/Previews/Previews'
 import {PostArticle} from './page/PostArticle/PostArticle'
 import {Article} from "./page/Article/Article";

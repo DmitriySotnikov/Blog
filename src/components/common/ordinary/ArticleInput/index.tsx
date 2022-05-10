@@ -24,4 +24,4 @@ export const ArticleInput: FC<IArticleInput> = (prop) => {
             />
         </Form.Item>
     )
-}
+};

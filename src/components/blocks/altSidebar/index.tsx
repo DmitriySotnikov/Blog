@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Menu} from "../menu";
 import {SliderAuto} from "../../common/ordinary/CarouselAutoPlay/Slider";
+import {DropdownMenu} from "../../common/ordinary/DropdownMenu";
 
 export const AltSidebar = () => {
 
@@ -36,6 +37,7 @@ export const AltSidebar = () => {
                                 </li>
                                 <li className='menu__list-item'>
                                     <Link className='menu__link' to={'#'}>Cтатьи</Link>
+                                    <DropdownMenu/>
                                 </li>
                                 <li className='menu__list-item'>
                                     <Link className='menu__link' to={'#'}>Помощь</Link>
