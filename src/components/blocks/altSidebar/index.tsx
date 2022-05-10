@@ -4,12 +4,15 @@ import '../../../styles/Scss/_menu.scss'
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Menu} from "../menu";
+import {navItems} from '../../../util/NavItems'
 import {SliderAuto} from "../../common/ordinary/CarouselAutoPlay/Slider";
 import {DropdownMenu} from "../../common/ordinary/DropdownMenu";
 
 export const AltSidebar = () => {
 
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState<boolean>(false)
+
+    let activeLink = 'Главная'
 
     return (
         <div className='header'>
@@ -32,22 +35,15 @@ export const AltSidebar = () => {
                         </div>
                         <div className='menu'>
                             <ul className='menu__list'>
-                                <li className='menu__list-item'>
-                                    <Link className='menu__link--active' to={'#'}>Главная</Link>
-                                </li>
-                                <li className='menu__list-item'>
-                                    <Link className='menu__link' to={'#'}>Cтатьи</Link>
-                                    <DropdownMenu/>
-                                </li>
-                                <li className='menu__list-item'>
-                                    <Link className='menu__link' to={'#'}>Помощь</Link>
-                                </li>
-                                <li className='menu__list-item'>
-                                    <Link className='menu__link' to={'#'}>Обо мне</Link>
-                                </li>
-                                <li className='menu__list-item'>
-                                    <Link className='menu__link' to={'#'}>Контакты</Link>
-                                </li>
+                                {navItems.map(i => {
+                                        return <li className='menu__list-item'>
+                                            <Link className={i.title === activeLink ? 'menu__link--active' :
+                                                'menu__link'
+                                            } to={i.element}>{i.title}</Link>
+                                            {i.title === 'Cтатьи' ? <DropdownMenu/> : null}
+                                        </li>
+                                    }
+                                )}
                             </ul>
                         </div>
                     </div>
