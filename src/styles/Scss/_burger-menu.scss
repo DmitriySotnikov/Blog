@@ -1,13 +1,12 @@
 .burger-menu {
-  border: #bfbfbf solid 1px;
-  position: fixed;
+  border: 1px solid var(--menu-link-active);
   width: 300px;
   text-transform: uppercase;
   top: 80px;
   left: 0;
-  height: 100%;
+  height: content-box;
   transition: .3s;
-  background: #0050b3;
+  background: var(--background-menu);
   transform: translateX(-150%);
   &__active {
     transform: translateX(0);
@@ -20,11 +19,26 @@
   &__list-item {
     margin: 35px 0 0 0;
     padding-bottom: 25px;
-    border-bottom: #bfbfbf solid 1px;
+    border-bottom: 1px solid var(--menu-link-active);
   }
   &__link {
     text-decoration: none;
     color: var(--white);
     padding-left: 40px;
+    &:hover {
+      color: var(--menu-link-color)
+    }
+  }
+  &__sub-menu {
+    margin: 10px 0 0 20px;
+    font-size: 14px;
+  }
+  &__sub-item {
+    margin: 35px 0;
+  }
+  &__sub-link {
+    border-bottom: 1px solid var(--menu-link-active);
+    padding: 0 0 7px 0;
+    margin-left: 40px;
   }
 }

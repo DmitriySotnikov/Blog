@@ -12,6 +12,8 @@ export const AltSidebar = () => {
 
     const [active, setActive] = useState<boolean>(false)
 
+    const [dropdown, setDropdown] = useState<boolean>(false)
+
     let activeLink = 'Главная'
 
     return (
@@ -36,12 +38,33 @@ export const AltSidebar = () => {
                         <div className='menu'>
                             <ul className='menu__list'>
                                 {navItems.map(i => {
-                                        return <li className='menu__list-item'>
-                                            <Link className={i.title === activeLink ? 'menu__link--active' :
-                                                'menu__link'
-                                            } to={i.element}>{i.title}</Link>
-                                            {i.title === 'Cтатьи' ? <DropdownMenu/> : null}
-                                        </li>
+                                        return i.title === 'Cтатьи' ?
+                                            <li className='menu__list-item'
+                                                onMouseEnter={() => setDropdown(!dropdown)}
+                                                onMouseLeave={() => setDropdown(!dropdown)}
+                                            >
+                                                <Link
+                                                    className={i.title === activeLink ?
+                                                        'menu__link--active' :
+                                                        'menu__link'
+                                                    } to={i.element}
+                                                >
+                                                    {i.title}
+                                                </Link>
+                                                <DropdownMenu drop = {dropdown}/>
+                                            </li>
+                                            :
+                                            <li className='menu__list-item'
+                                            >
+                                                <Link
+                                                    className={i.title === activeLink ?
+                                                        'menu__link--active' :
+                                                        'menu__link'
+                                                    } to={i.element}
+                                                >
+                                                    {i.title}
+                                                </Link>
+                                            </li>
                                     }
                                 )}
                             </ul>

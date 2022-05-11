@@ -4,19 +4,22 @@
 
   @media (max-width: 1024px) {
     & {
-      width: 768px;
+      width: 100vw;
+      //width: 768px;
     }
   }
 
   @media (max-width: 768px) {
     & {
-      width: 480px;
+      width: 100vw;
+      //width: 480px;
     }
   }
 
   @media (max-width: 480px) {
     & {
-      width: 320px;
+      width: 100vw;
+      //width: 320px;
     }
   }
 }

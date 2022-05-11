@@ -38,13 +38,13 @@ export const dropdownItems = [
     {
         id: 1,
         title: 'Подогреватели',
-        element: './autoAlarm',
+        element: './preHeaters',
         classNameItem: 'dropdown-menu__link'
     },
     {
         id: 2,
         title: 'Помощь установщику ',
-        element: './autoAlarm',
+        element: './installerHelp',
         classNameItem: 'dropdown-menu__link'
     }
 ]

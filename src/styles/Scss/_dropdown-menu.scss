@@ -1,4 +1,5 @@
 .dropdown-menu {
+  margin-left: -85px;
   top: 80px;
   background: var(--background-menu);
   position: absolute;
@@ -6,6 +7,7 @@
   color: var(--white);
   padding: 10px;
   text-align: start;
+  opacity: 0.9;
   &__list {
     padding: 0;
     :hover{
@@ -16,6 +18,7 @@
     list-style-type: none;
     line-height: 50px;
     padding: 0 15px;
+    border-bottom: 1px solid var(--menu-link-active);
   }
   &__link {
     text-decoration: none;

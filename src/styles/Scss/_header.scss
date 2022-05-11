@@ -91,6 +91,9 @@
       transition: .2s;
     }
   }
+  &__burger-btn-container {
+      margin-left: 25px;
+    }
   @media (min-width: 1024px) {
     &__burger-btn-container {
       display: none;

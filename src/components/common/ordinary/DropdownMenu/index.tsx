@@ -1,13 +1,15 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import '../../../../styles/Scss/_dropdown-menu.scss'
 import {dropdownItems} from '../../../../util/NavItems'
 import {Link} from "react-router-dom";
 
-export const DropdownMenu:FC = () => {
+interface DropDownProps {
+    drop: boolean
+}
 
-    const [dropdown, setDropdown] = useState<boolean>(true)
+export const DropdownMenu:FC<DropDownProps> = (props) => {
 
-    return ( dropdown ?
+    return ( props.drop ?
         <div className='dropdown-menu'>
             <ul className='dropdown-menu__list'>
                 {
