@@ -6,7 +6,6 @@ import {RootState} from "../../store/store";
 import {fetchPreviews} from "../../store/actions-creators/articles";
 import {Spine} from "../../components/common/simple/Spiner";
 import {PaginationElem} from "../../components/common/simple/Pagination";
-import {Error} from "../../components/common/simple/Error";
 import {Navigate} from "react-router-dom";
 
 

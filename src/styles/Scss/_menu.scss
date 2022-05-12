@@ -1,17 +1,16 @@
 .menu {
   margin-right: 20px;
   list-style-type: none;
-
+  &__list{
+  }
   &__list-item {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
   }
-
   &__link {
     text-decoration: none;
     color: var(--white);
-
     &--active {
       text-decoration: none;
       color: var(--white);
@@ -22,13 +21,11 @@
       color: var(--menu-link-color)
     }
   }
-
   &__list-item {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
   }
-
   @media (max-width: 1024px) {
     & {
       display: none;

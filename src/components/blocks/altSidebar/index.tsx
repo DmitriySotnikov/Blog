@@ -70,12 +70,9 @@ export const AltSidebar = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className='header__content'>
-                        <div className='container'>
-                            <div className='header__menu-available'>
-                                <Menu active={active}/>
-                            </div>
-                            <SliderAuto/>
+                    <div className='container'>
+                        <div className='header__menu-available'>
+                            <Menu active={active} setActive = {setActive}/>
                         </div>
                     </div>
                 </div>

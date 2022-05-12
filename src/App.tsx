@@ -7,6 +7,7 @@ import {Article} from "./page/Article/Article";
 import {Spine} from "./components/common/simple/Spiner";
 import {Error} from "./components/common/simple/Error";
 import {AltSidebar} from "./components/blocks/altSidebar";
+import './App.css'
 
 
 export const App: FC = () => {
@@ -15,7 +16,7 @@ export const App: FC = () => {
             <AltSidebar/>
             <Routes>
                 <Route path='/article/:id' element={<Article />}/>
-                <Route path='/preview' element={<Previews />} />
+                <Route path='/autoAlarm' element={<Previews />} />
                 <Route path='/postArticle' element={<PostArticle />} />
                 <Route path='/' element={<Home />} />
                 <Route path='/spine' element={<Spine/>}/>

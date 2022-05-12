@@ -4,11 +4,12 @@ import {Link} from "react-router-dom";
 
 interface prop {
     active: boolean
+    setActive: (arg: boolean) => void
 }
 
-export const Menu: FC<prop> = (active) => {
+export const Menu: FC<prop> = ({active, setActive}) => {
     return (
-        <div className={active.active ? 'burger-menu__active burger-menu' : 'burger-menu'}>
+        <div className={active ? 'burger-menu__active burger-menu' : 'burger-menu'}>
             <ul className='burger-menu__list'>
                 <li className='burger-menu__list-item'>
                     <Link className='burger-menu__link' to={'#'}>Главная</Link>
@@ -17,7 +18,8 @@ export const Menu: FC<prop> = (active) => {
                     <Link className='burger-menu__link' to={'#'}>Cтатьи</Link>
                     <ul className='burger-menu__list burger-menu__sub-menu'>
                         <li className='burger-menu__sub-item'>
-                            <Link className='burger-menu__link burger-menu__sub-link' to={'#'}>Автосигнализации</Link>
+                            <Link className='burger-menu__link burger-menu__sub-link'
+                                  onClick={() => setActive(false)} to={'/autoAlarm'}>Автосигнализации</Link>
                         </li>
                         <li className='burger-menu__sub-item'>
                             <Link className='burger-menu__link burger-menu__sub-link' to={'#'}>Подогреватели</Link>
