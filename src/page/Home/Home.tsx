@@ -9,7 +9,7 @@ export const Home: FC = () => {
         <div className='home'>
             <div className='container'>
                 <div className='home-main'>
-                    <SliderAuto />
+                    <SliderAuto/>
                     <div className='home__author-blog'>
                         <img className='home__author-portrait' src={img}/>
                         <div className='home__author-blog'>

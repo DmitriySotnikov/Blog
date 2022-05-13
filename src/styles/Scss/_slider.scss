@@ -31,6 +31,8 @@
     z-index: 20;
   }
   &__arrow {
+    transition: all 0.5s ease-in;
+    //display: none;
     cursor: pointer;
     z-index: 10;
     position: absolute;
@@ -46,10 +48,19 @@
       background-color: rgba(0, 0, 0, 0.6);
       transition: all 0.5s ease-in;
     }
+    &--prev {
+      left: -50px;
+    }
     &--next {
-      right: 0;
+      right: -50px;
       border-radius: 5px 0 0 5px;
     }
+  }
+  &:hover .slider__arrow--next{
+    right: 0;
+  }
+  &:hover .slider__arrow--prev{
+    left: 0;
   }
   &__slides {
     height: var(--heights-slider);
@@ -68,7 +79,7 @@
     position: absolute;
     object-fit: cover;
   }
-  &__slide-text{
+  &__slide-text {
     width: 100%;
     height: 100%;
     color: var(--white);

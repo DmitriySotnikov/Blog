@@ -7,7 +7,8 @@ import "../../../../styles/Scss/_slider.scss"
 
 const len = sliderImage.length - 1;
 
-export const SliderAuto:FC = () => {
+export const SliderAuto: FC = (props) => {
+
     const [activeIndex, setActiveIndex] = useState<number>(0);
 
     useEffect(() => {
@@ -19,16 +20,19 @@ export const SliderAuto:FC = () => {
 
     return (
         <div className='slider'>
-            <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
-            <Arrows
-                prevSlide={() =>
-                    setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
-                }
-                nextSlide={() =>
-                    setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-                }
+            <SliderContent
+                activeIndex={activeIndex}
+                sliderImage={sliderImage}
             />
-            <Dots
+                <Arrows
+                    prevSlide={() =>
+                        setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
+                    }
+                    nextSlide={() =>
+                        setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+                    }
+                />
+                <Dots
                 activeIndex={activeIndex}
                 sliderImage={sliderImage}
                 onclick={(activeIndex: number) => setActiveIndex(activeIndex)}

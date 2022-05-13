@@ -7,6 +7,8 @@
   --heights-slider: 50vh;
   --widths-slider: 100%;
 
+  --background-wrapper: #ebebe8;
+  --color-text: #3e3e3e;
   --background-menu: #3e3e3e;
   --menu-link-color: #ff6060;
   --menu-link-active: #ebebe8;
@@ -21,7 +23,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ebebe8;
+  background: var(--background-wrapper);
+  color: var(--color-text);
 }
 
 @font-face {

@@ -8,7 +8,7 @@ interface ArrowsProps {
 export const Arrows: FC<ArrowsProps> = ({ prevSlide, nextSlide }) => {
   return (
     <div className="slider__arrows">
-      <span className="slider__arrow" onClick={prevSlide}>
+      <span className="slider__arrow slider__arrow--prev" onClick={prevSlide}>
         &#10094;
       </span>
       <span className="slider__arrow slider__arrow--next" onClick={nextSlide}>

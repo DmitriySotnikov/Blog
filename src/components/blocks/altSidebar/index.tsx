@@ -5,7 +5,6 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {Menu} from "../menu";
 import {navItems} from '../../../util/NavItems'
-import {SliderAuto} from "../../common/ordinary/CarouselAutoPlay/Slider";
 import {DropdownMenu} from "../../common/ordinary/DropdownMenu";
 
 export const AltSidebar = () => {

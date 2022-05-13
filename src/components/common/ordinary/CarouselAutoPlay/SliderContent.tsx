@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 
 interface SliderContentProps {
   activeIndex: number
@@ -10,19 +10,20 @@ interface SliderContentProps {
 }
 
 export const SliderContent:FC<SliderContentProps> = (
-    {activeIndex, sliderImage }) => {
+    {activeIndex, sliderImage}) => {
+
   return (
-    <section>
-      {sliderImage.map((slide, index) => (
-        <div
-          key={index}
-          className={index === activeIndex ? "slider__slides slider__slides--active" : "slider__slides--inactive"}
-        >
-          <img className="slider__slide-image" src={slide.urls} alt="" />
-          <h2 className="slider__slide-text">{slide.title}</h2>
-          <h3 className="slider__slide-text slider__slide-text--description">{slide.description}</h3>
-        </div>
-      ))}
-    </section>
+      <div className='slider__content'>
+        {sliderImage.map((slide, index) => (
+            <div
+                key={index}
+                className={index === activeIndex ? "slider__slides slider__slides--active" : "slider__slides--inactive"}
+            >
+              <img className="slider__slide-image" src={slide.urls} alt="" />
+              <h2 className="slider__slide-text">{slide.title}</h2>
+              <h3 className="slider__slide-text slider__slide-text--description">{slide.description}</h3>
+            </div>
+        ))}
+      </div>
   );
 }
