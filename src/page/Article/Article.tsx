@@ -14,6 +14,7 @@ export const Article: FC = () => {
 
 
     useEffect( () => {
+
         if (id) {
             {
                 fetchArticle(id)

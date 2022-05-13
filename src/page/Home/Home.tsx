@@ -5,6 +5,7 @@ import {SliderAuto} from "../../components/common/ordinary/CarouselAutoPlay/Slid
 import img from '../../assets/icons/image.png'
 
 export const Home: FC = () => {
+
     return (
         <div className='home'>
             <div className='container'>

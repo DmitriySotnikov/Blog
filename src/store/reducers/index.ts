@@ -1,7 +1,7 @@
 // Корневой Reducer в котором мы обьеденяем все reducers
 
 import {articleReducer} from './articles'
-import {sidebarItemsReducer} from "./sidebarItems";
+import {sidebarItemsReducer} from "./navItems";
 import {errorReducer} from "./errors";
 
 export const reducers = {

@@ -7,16 +7,18 @@ import {fetchPreviews} from "../../store/actions-creators/articles";
 import {Spine} from "../../components/common/simple/Spiner";
 import {PaginationElem} from "../../components/common/simple/Pagination";
 import {Navigate} from "react-router-dom";
+import {navItems} from "../../util/NavItems";
 
 
 
 export const Previews: FC = () => {
 
-    const {fetchPreviews} = useAppDispatchBind()
+    const {fetchPreviews, setPosition} = useAppDispatchBind()
     const {previews, loading, limit, currentPage} = useAppSelector((state: RootState) => state.articles)
     const {isError} = useAppSelector((state: RootState) => state.errors)
 
     useEffect(() => {
+        setPosition(navItems[1].title)
         fetchPreviews(limit, currentPage)
     }, [currentPage])
 

@@ -3,6 +3,7 @@ import {ISidebarItem} from "../../../models/ISidebarItem";
 
 export interface SidebarItemsState {
     items : ISidebarItem[]
+    positions: string
 }
 
 export interface SetSidebarItem {
@@ -10,5 +11,11 @@ export interface SetSidebarItem {
     payload: ISidebarItem[]
 }
 
+export interface SetNavPosition {
+    type: InterfaceActionType.SET_NAV_POSITIONS
+    payload: string
+}
+
 export type SidebarActionsCreator =
-    SetSidebarItem
+    SetSidebarItem |
+    SetNavPosition

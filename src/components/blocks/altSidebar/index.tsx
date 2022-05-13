@@ -6,14 +6,15 @@ import {Link} from "react-router-dom";
 import {Menu} from "../menu";
 import {navItems} from '../../../util/NavItems'
 import {DropdownMenu} from "../../common/ordinary/DropdownMenu";
+import {useAppSelector} from "../../../hooks/redux";
 
 export const AltSidebar = () => {
 
     const [active, setActive] = useState<boolean>(false)
-
     const [dropdown, setDropdown] = useState<boolean>(false)
+    const {positions} = useAppSelector(state => state.sidebarItems)
 
-    let activeLink = 'Главная'
+    console.log(positions)
 
     return (
         <div className='header'>
@@ -43,7 +44,7 @@ export const AltSidebar = () => {
                                                 onMouseLeave={() => setDropdown(!dropdown)}
                                             >
                                                 <Link
-                                                    className={i.title === activeLink ?
+                                                    className={i.title === positions ?
                                                         'menu__link--active' :
                                                         'menu__link'
                                                     } to={i.element}
@@ -56,7 +57,7 @@ export const AltSidebar = () => {
                                             <li className='menu__list-item'
                                             >
                                                 <Link
-                                                    className={i.title === activeLink ?
+                                                    className={i.title === positions ?
                                                         'menu__link--active' :
                                                         'menu__link'
                                                     } to={i.element}

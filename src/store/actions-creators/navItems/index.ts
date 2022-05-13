@@ -1,9 +1,15 @@
 import {Dispatch} from "redux";
 import {InterfaceActionType} from "../../action";
-import {SetSidebarItem, SidebarActionsCreator} from "../../types/sidebarItemsTypes";
+import {SetNavPosition, SetSidebarItem, SidebarActionsCreator} from "../../types/navItemsTypes";
 import {ISidebarItem} from "../../../models/ISidebarItem";
 import {InterfaceService} from "../../../service/InterfaceService";
 
+
+export const setPosition = (payload: string): SetNavPosition =>
+    ({type: InterfaceActionType.SET_NAV_POSITIONS,
+            payload
+        }
+    )
 
 export function fetchItems() {
     return async function fetchItemsThunk(dispatch: Dispatch<SidebarActionsCreator>) {

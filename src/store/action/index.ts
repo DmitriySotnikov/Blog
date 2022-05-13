@@ -13,7 +13,8 @@ export enum ArticleActionTypes {
 }
 
 export enum InterfaceActionType {
-    SET_SIDEBAR_ITEM = 'SET_SIDEBAR_ITEM'
+    SET_SIDEBAR_ITEM = 'SET_SIDEBAR_ITEM',
+    SET_NAV_POSITIONS = 'SET_NAV_POSITIONS'
 }
 
 export enum ErrorType {
