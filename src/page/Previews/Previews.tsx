@@ -16,15 +16,20 @@ export const Previews: FC = () => {
     const {fetchPreviews, setPosition} = useAppDispatchBind()
     const {previews, loading, limit, currentPage} = useAppSelector((state: RootState) => state.articles)
     const {isError} = useAppSelector((state: RootState) => state.errors)
+    const {positions} = useAppSelector(state => state.sidebarItems)
 
     useEffect(() => {
-        setPosition(navItems[1].title)
         fetchPreviews(limit, currentPage)
+        return () => {
+            setPosition('Статьи')
+            console.log(positions)
+        }
     }, [currentPage])
 
     if (loading) {
         return <Spine/>
     }
+    console.log(positions)
 
     return ( isError ?
             <Navigate to='/error'/> :

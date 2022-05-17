@@ -1,20 +1,21 @@
 import '../../../styles/Scss/_container.scss'
 import '../../../styles/Scss/_header.scss'
 import '../../../styles/Scss/_menu.scss'
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import {Menu} from "../menu";
 import {navItems} from '../../../util/NavItems'
 import {DropdownMenu} from "../../common/ordinary/DropdownMenu";
-import {useAppSelector} from "../../../hooks/redux";
+import {useAppDispatchBind, useAppSelector} from "../../../hooks/redux";
 
 export const AltSidebar = () => {
 
     const [active, setActive] = useState<boolean>(false)
     const [dropdown, setDropdown] = useState<boolean>(false)
     const {positions} = useAppSelector(state => state.sidebarItems)
+    const {setPosition} = useAppDispatchBind()
 
-    console.log(positions)
+    useEffect(() => {setPosition(positions)}, [positions])
 
     return (
         <div className='header'>

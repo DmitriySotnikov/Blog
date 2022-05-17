@@ -23,7 +23,9 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--background-wrapper);
+
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-text);
 }
 
@@ -31,3 +33,4 @@ body {
   font-family: 'Montserrat';
   src: local('Montserrat'), url(assets/font/Montserrat/Montserrat-BoldItalic.ttf) format('truetype');
 }
+
