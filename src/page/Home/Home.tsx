@@ -3,7 +3,7 @@ import '../../styles/Scss/_home.scss'
 import '../../styles/Scss/_container.scss'
 import {SliderAuto} from "../../components/common/ordinary/CarouselAutoPlay/Slider";
 import img from '../../assets/icons/image.png'
-import {useAppDispatchBind, useAppSelector} from "../../hooks/redux";
+import {useAppDispatchBind} from "../../hooks/redux";
 
 export const Home: FC = () => {
     const {setPosition} = useAppDispatchBind()
